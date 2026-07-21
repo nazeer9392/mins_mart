@@ -1,0 +1,25 @@
+{% extends "main.html" %}
+{% load static %}
+{% block title %}Minitsmart-profile{% endblock %}
+{% block content %}
+<div class="profile_div bg-warning p-5 m-auto mt-5 rounded " style="width:40%">
+    <h3 class='text-center pb-3'> {{user.username}} profile</h3>
+    <div class="row text-center g-3">
+        <div class="col-6 bg-light ">username</div>
+        <div class="col-6 bg-info">{{user.username}}</div>
+
+        <div class="col-6 bg-light border-top">firstname</div>
+        <div class="col-6 bg-info">{{user.first_name}}</div>
+
+        <div class="col-6 bg-light border-top">lastname</div>
+        <div class="col-6 bg-info">{{user.last_name}}</div>
+
+        <div class="col-6 bg-light border-top">email</div>
+        <div class="col-6 bg-info">{{user.email}}</div>
+
+        <div class="col-12 bg-danger">
+            <a href="{% url "logout" %}" class='btn text-white rounded'>logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

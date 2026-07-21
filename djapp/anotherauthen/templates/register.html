@@ -1,0 +1,100 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h1 class='text-center mt-4'>Registrartion Page</h1>
+<div class="container" >
+    <form action="" method='POST' class='bg-light m-auto mt-5 p-5 shadow' style='width:40%'>
+        {% csrf_token %}
+
+        <table style='width:100% '>
+            <tr>
+                <td><label >First Name:</label> </td>
+                <td><input class='form-control' type="text" placeholder='Enter First Name'  name='first_name'></td>
+            </tr>
+            <tr>
+                <td><label >Last Name:</label> </td>
+                <td><input class='form-control' type="text" placeholder='Eneter Last Name' name='last_name' ></td>
+            </tr>
+            <tr>
+                <td><label >Username:</label> </td>
+                <td><input class='form-control' type="text" placeholder='username' name='username'></td>
+            </tr>
+            <tr>
+                <td><label >Email:</label> </td>
+                <td><input class='form-control' type="email" placeholder='Enter email' name='email'></td>
+            </tr>
+            {% comment %} <tr>
+                <td><label >Mobile No:</label> </td>
+                <td><input class='form-control' type="number" placeholder='Enter Mobile number' name='mobileno' ></td>
+            </tr> {% endcomment %}
+            <tr>
+                <td><label >Password:</label> </td>
+                <td><input class='form-control' type="password" placeholder='Enter password' name='password' required></td>
+            </tr>
+            <tr>
+                <td colspan='2'><button type='submit' class='btn btn-info mt-4'>Login</button></td>            
+            </tr>
+        </table>
+
+        <a href="{% url "login" %}" class=' p-10'>Alerady a user </a>
+        {% comment %} <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">First name</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="text" placeholder='enter first name'>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">Last name</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="text" placeholder='enter last name'>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">User name</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="text" placeholder='enter User name'>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">Mobile number</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="number" placeholder='enter mobile number'>
+            </div>
+        </div>
+
+     
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">Email ID</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="Email" placeholder='enter your email'>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">Enter Password</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="password" placeholder='enter password'>
+            </div>
+        </div> {% endcomment %}
+    </form>
+</div>
+{% endblock %}

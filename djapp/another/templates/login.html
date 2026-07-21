@@ -1,0 +1,52 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block title %}login{% endblock %}
+
+{% block content %}
+<h1 class='text-center mt-4'>Login</h1>
+<div class="container mt-4">
+    {% if bool %}
+  <div class="bg-warning text-white w-50 m-auto p-3 mt-4">
+    <h3>Invalid Crediantial</h3>
+    <p>
+        Your not registered user , click on the Registrartion link
+        <a href="{% url "register" %}">Register</a>
+    </p>
+  </div>
+  {% endif %}
+    <form action="" method='POST'>
+        {% csrf_token %}
+        <div class="row mt-3">
+        
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label  for="">Username</label>
+            </div>
+            <div class="col-md-6 col-sm-12 ">
+                <input class='form-control' type="text" placeholder='enter username ' name='username'>
+            </div>
+        
+         </div>
+
+         <div class="row mt-3">
+        
+            <div class="col-md-6 col-sm-12 bg-dark text-white text-center">
+                <label for="">Password</label>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <input class='form-control' type="password" placeholder='enter password' name='password'>
+            </div>
+        
+         </div>
+
+         <div class="row">
+            <div class="col text-center">
+                <button type='submit' class='btn btn-dark btn-lg text-light mt-4 m-auto '>Login</button>
+            </div>
+         </div>
+       <p class="text-center mt-3">
+        <a href="{% url "register" %}">New user? Click to register</a>
+       </p>
+    </form>
+</div>
+{% endblock %}

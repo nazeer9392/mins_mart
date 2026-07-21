@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h2>Search Results for "{{ query }}"</h2>
+    {% if results %}
+    {% for i in results %}
+    <div class="col-sm-12 col-md-6 col-lg-4">
+      <div class="card text-center border-dark border-3 ">
+        <div class="card-body">
+          <a href="{% url "desc" i.id %}">
+            <img src="{{i.image.url}}" style="height: 20rem; width:100%">
+          </a>
+        </div>
+        <div class="card-footer border-dark border-3 ">
+          <h4 class="text-center">{{i.name}}</h4>
+          <h5 class="text-center">Price:{{i.price}}/-</h5>
+          <div class="d-flex justify-content-between mt-3">
+            <a href="{% url "addtocart" i.id %}" class="btn btn-warning">Add To Cart</a>
+            <a href="" class="btn btn-primary">Buy Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+      </ul>
+    {% else %}
+      <p>No results found.</p>
+    {% endif %}
+  </div>
+    {% endblock %}
